@@ -3,9 +3,9 @@ package com.farming.garden.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.farming.garden.model.PlantsTest;
+import com.farming.garden.model.PlantsTestEntity;
 
 @Repository
-public interface PlantsTestRepository extends JpaRepository<PlantsTest, Long>{
+public interface PlantsTestRepository extends JpaRepository<PlantsTestEntity, Long>{
 
 }

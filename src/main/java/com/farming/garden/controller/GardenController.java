@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.farming.garden.model.PlantsTest;
+import com.farming.garden.model.PlantsTestEntity;
 import com.farming.garden.service.PlantService;
 
 import lombok.RequiredArgsConstructor;
@@ -28,23 +28,23 @@ public class GardenController {
 	private final PlantService plantService;
 	
 	@GetMapping
-	public ResponseEntity<List<PlantsTest>> getAllPlants(){
+	public ResponseEntity<List<PlantsTestEntity>> getAllPlants(){
 		return ResponseEntity.ok().body(plantService.findAllPlants());
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<PlantsTest> getPlantById(@PathVariable("id") Long id){
+	public ResponseEntity<PlantsTestEntity> getPlantById(@PathVariable("id") Long id){
 		log.info("GET CALL WITH ID {}", id);
 		return ResponseEntity.ok().body(plantService.findPlantById(id));
 	}
 	
 	@PostMapping("/add")
-	public ResponseEntity<PlantsTest> savePlant(@RequestBody PlantsTest plantsTest){
+	public ResponseEntity<PlantsTestEntity> savePlant(@RequestBody PlantsTestEntity plantsTest){
 		return ResponseEntity.ok().body(plantService.savePlantsTest(plantsTest));
 	}
 	
 	@PutMapping
-	public ResponseEntity<PlantsTest> updatePlant(@RequestBody PlantsTest plantsTest){
+	public ResponseEntity<PlantsTestEntity> updatePlant(@RequestBody PlantsTestEntity plantsTest){
 		return ResponseEntity.ok().body(plantService.updatePlantsTest(plantsTest));
 	}
 	
